@@ -7,10 +7,9 @@
 %table#movies
   %thead
     %tr
-      %th{:class=> @orderby=='title' ? 'hilite' : ''}
-        =link_to "Movie Title", movies_path({:orderby=>'title'}), {:id=>"title_header"}
+      %th= link_to('Movie Title' , '/')
       %th Rating
-      %th Release Date
+      %th= link_to('Release Date' , '/')
       %th More Info
   %tbody
     - @movies.each do |movie|

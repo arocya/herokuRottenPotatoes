@@ -2585,3 +2585,61 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 16:06:02 -0300
 Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-03-15 18:45:15 -0300
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (17ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2015-03-15 18:45:17 -0300
+  [1m[36m (8.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Processing by Rails::InfoController#properties as HTML
+  Rendered inline template (59.5ms)
+Completed 200 OK in 95.0ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-03-15 18:45:21 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (30.5ms)
+Completed 200 OK in 267.2ms (Views: 111.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-15 18:45:22 -0300
+Served asset /application.css - 304 Not Modified (103ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-15 18:45:22 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-15 18:45:22 -0300
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-15 18:45:22 -0300
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-03-15 18:49:01 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (15.4ms)
+Completed 200 OK in 37.6ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-15 18:49:01 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-15 18:49:01 -0300
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-15 18:49:01 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-15 18:49:01 -0300
+Served asset /jquery.js - 304 Not Modified (5ms)
