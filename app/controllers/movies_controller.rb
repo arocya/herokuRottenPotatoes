@@ -8,15 +8,16 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+	
+	if params[:sort]=='Title'
+		@movies.sort_by! {|movie| movie.title}
+	
+	else if params[:sort]=='Release Date'
+		@movies.sort_by! {|movie| movie.release_date}
+	
+	end
+	end	
 
-	#added orderby
- 	if params[:orderby]
-		session[:orderby] = params[:orderby]
-	else session[:orderby]
-		redirect = true
-		params[:orderby] = session[:orderby]
-    end
-	#
   end
 	
   def new
