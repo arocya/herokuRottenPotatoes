@@ -8,16 +8,36 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
-	
-	if params[:sort]=='Title'
-		@movies.sort_by! {|movie| movie.title}
-		@title_header = 'hilite'
-	else if params[:sort]=='Release Date'
-		@movies.sort_by! {|movie| movie.release_date}
-		@release_date_header = 'hilite'
-	
+    @all_ratings = ["G","PG","PG-13","R"]
+    	
+
+
+        #do this for sort also   
+	if params[:ratings]
+	@ratings = params[:ratings]
+	elsif session[:ratings]
+	@ratings = session[:ratings]
+	else
+	@all_ratings each do |r|
+	(@ratings ||= {})[r] = 1
 	end
-	end	
+	end
+	
+	
+	@movie = Movie.order(params[:sort])      
+	@movie = @movie.where(rating: params[:ratings].keys) if params[:ratings].present?
+
+	
+
+	#if params[:sort]=='Title'
+	#	@movies.sort_by! {|movie| movie.title}
+	#	@title_header = 'hilite'
+	#else if params[:sort]=='Release Date'
+	#	@movies.sort_by! {|movie| movie.release_date}
+	#	@release_date_header = 'hilite'
+	
+	#end
+	#end	
 
   end
 	

@@ -4,6 +4,12 @@
 = form_tag movies_path, :method => :get do
   = hidden_field_tag(:orderby, @orderby)
 
+  Include:
+  - @all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]" , 1 , @ratings.include?(rating)  
+  = submit_tag 'Refresh'
+
 %table#movies
   %thead
     %tr
