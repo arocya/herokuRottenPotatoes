@@ -11,9 +11,10 @@ class MoviesController < ApplicationController
 	
 	if params[:sort]=='Title'
 		@movies.sort_by! {|movie| movie.title}
-	
+		@title_header = 'hilite'
 	else if params[:sort]=='Release Date'
 		@movies.sort_by! {|movie| movie.release_date}
+		@release_date_header = 'hilite'
 	
 	end
 	end	
