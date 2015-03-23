@@ -13,15 +13,15 @@ class MoviesController < ApplicationController
 
 
         #do this for sort also   
-	if params[:ratings]
-	@ratings = params[:ratings]
-	elsif session[:ratings]
-	@ratings = session[:ratings]
-	else
-	@all_ratings each do |r|
-	(@ratings ||= {})[r] = 1
-	end
-	end
+	#if params[:ratings]
+	#@ratings = params[:ratings]
+	#elsif session[:ratings]
+	#@ratings = session[:ratings]
+	#else
+	#@all_ratings.each do |r|
+	#(@ratings ||= {})[r] = 1
+	#end
+	#end
 	
 	
 	@movie = Movie.order(params[:sort])      

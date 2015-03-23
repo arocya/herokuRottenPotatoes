@@ -9,7 +9,21 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @all_ratings = ["G","PG","PG-13","R"]
-    @ratings = params[:ratings]
+    	
+
+
+        #do this for sort also   
+	if params[:ratings]
+	@ratings = params[:ratings]
+	#elsif session[:ratings]
+	#@ratings = session[:ratings]
+	#else
+	#@all_ratings.each do |r|
+	#(@ratings ||= {})[r] = 1
+	end
+	#end
+	
+	
 	@movie = Movie.order(params[:sort])      
 	@movie = @movie.where(rating: params[:ratings].keys) if params[:ratings].present?
 
